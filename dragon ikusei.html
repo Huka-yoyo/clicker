@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ドラゴンズ育成クリッカー</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+        <!-- 全体を3つのセクションに分ける -->
+        <div id="container">
+            <!-- 左側のクリック構造 -->
+            <div id="clickerSection">
+                <h1>ドラゴンズ育成クリッカー</h1>
+                <p id="counter">0 人が応援中</p>
+                <p id="autoRate">応援者が毎秒 0 人増加しています</p> <!-- 自動増加の表示を追加 -->
+                <!-- クリック対象を画像に変更 -->
+                <img id="clicker" src="img/drafut.jpg" alt="ドラゴンズロゴ" />
+            </div>
+            
+          <!-- 真ん中のオプション構造 -->
+          <div id="optionSection">
+            <h2>オプション</h2>
+            <!-- オプション内容 -->
+            <div id="optionContent">ここにオプションや設定が表示されます。</div>
+            <button onclick="saveGame()">セーブ</button>
+            <button onclick="loadGame()">ロード</button>
+
+          </div>
+        
+
+          <!-- 右側のアイテムリスト -->
+          <div id="itemSection">
+            <h2>ショップ</h2>
+            <div id="shop">
+                <!-- アイテム0 -->
+                <div class="buyItem" id="buyItem0">
+                    <img src="img/0-2010年株式会社中日ドラゴンズ復興.png" alt="2010年株式会社中日ドラゴンズ復興" class="itemImage">
+                    <span class="itemName">2010年株式会社中日ドラゴンズ復興</span>
+                    <span class="itemPrice" id="buyItem0Price">10ポイント</span> <!-- 初回20ポイント -->
+                </div>
+        
+                <!-- アイテム1 -->
+                <div class="buyItem" id="buyItem1">
+                    <img src="img/1-ナゴヤ球場再建設.jpg" alt="ナゴヤ球場再建設" class="itemImage">
+                    <span class="itemName">ナゴヤ球場再建設</span>
+                    <span class="itemPrice" id="buyItem1Price">125ポイント</span>
+                </div>
+        
+                <!-- アイテム2 -->
+                <div class="buyItem" id="buyItem2">
+                    <img src="img/2-ナゴヤドーム再建設.jpg" alt="ナゴヤドーム再建設" class="itemImage">
+                    <span class="itemName">ナゴヤドーム再建設</span>
+                    <span class="itemPrice" id="buyItem2Price">1,500ポイント</span>
+                </div>
+        
+                <!-- アイテム3 -->
+                <div class="buyItem" id="buyItem3">
+                    <img src="img/3.jpg" alt="燃えよドラゴンズ採択" class="itemImage">
+                    <span class="itemName">燃えよドラゴンズ採択</span>
+                    <span class="itemPrice" id="buyItem3Price">13,000ポイント</span>
+                </div>
+        
+                <!-- アイテム4 -->
+                <div class="buyItem" id="buyItem4">
+                    <img src="img/4.jpg" alt="オーナー、運営母体、社長のチェンジ" class="itemImage">
+                    <span class="itemName">オーナー、運営母体、社長のチェンジ</span>
+                    <span class="itemPrice" id="buyItem4Price">120,000ポイント</span>
+                </div>
+        
+                <!-- アイテム5 -->
+                <div class="buyItem" id="buyItem5">
+                    <img src="img/5.jpg" alt="セ・リーグ参入計画" class="itemImage">
+                    <span class="itemName">セ・リーグ参入計画</span>
+                    <span class="itemPrice" id="buyItem5Price">1,350,000ポイント</span>
+                </div>
+        
+                <!-- アイテム6 -->
+                <div class="buyItem" id="buyItem6">
+                    <img src="img/6.jpg" alt="セ・リーグ本格参入再開" class="itemImage">
+                    <span class="itemName">セ・リーグ本格参入再開</span>
+                    <span class="itemPrice" id="buyItem6Price">20,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム7 -->
+                <div class="buyItem" id="buyItem7">
+                    <img src="img/7.jpg" alt="戦力補強計画" class="itemImage">
+                    <span class="itemName">戦力補強計画</span>
+                    <span class="itemPrice" id="buyItem7Price">350,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム8 -->
+                <div class="buyItem" id="buyItem8">
+                    <img src="img/8.jpg" alt="ドラフト会議再介入" class="itemImage">
+                    <span class="itemName">ドラフト会議再介入</span>
+                    <span class="itemPrice" id="buyItem8Price">5,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム9 -->
+                <div class="buyItem" id="buyItem9">
+                    <img src="img/9.jpg" alt="バトルフェイスの登場" class="itemImage">
+                    <span class="itemName">バトルフェイスの登場</span>
+                    <span class="itemPrice" id="buyItem9Price">50,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム10 -->
+                <div class="buyItem" id="buyItem10">
+                    <img src="img/10.jpg" alt="2000年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2000年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem10Price">200,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム11 -->
+                <div class="buyItem" id="buyItem11">
+                    <img src="img/11.jpg" alt="2014年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2014年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem11Price">3,800,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム12 -->
+                <div class="buyItem" id="buyItem12">
+                    <img src="img/12.jpg" alt="2021年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2021年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem12Price">53,300,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム13 -->
+                <div class="buyItem" id="buyItem13">
+                    <img src="img/13.jpg" alt="2023年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2023年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem13Price">706,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム14 -->
+                <div class="buyItem" id="buyItem14">
+                    <img src="img/14.jpg" alt="2022年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2022年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem14Price">9,704,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム15 -->
+                <div class="buyItem" id="buyItem15">
+                    <img src="img/15.jpg" alt="2004年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2004年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem15Price">10,000,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム16 -->
+                <div class="buyItem" id="buyItem16">
+                    <img src="img/16.jpg" alt="2011年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2011年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem16Price">102,500,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム17 -->
+                <div class="buyItem" id="buyItem17">
+                    <img src="img/17.jpg" alt="2012年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2012年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem17Price">1,090,000,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム18 -->
+                <div class="buyItem" id="buyItem18">
+                    <img src="img/18.jpg" alt="2019年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2019年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem18Price">11,991,000,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム19 -->
+                <div class="buyItem" id="buyItem19">
+                    <img src="img/19.jpg" alt="2020年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2020年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem19Price">130,670,000,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム20 -->
+                <div class="buyItem" id="buyItem20">
+                    <img src="img/20.jpg" alt="2018年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2018年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem20Price">1,386,500,000,000,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム21 -->
+                <div class="buyItem" id="buyItem21">
+                    <img src="img/21.jpg" alt="2013年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2013年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem21Price">15,800,000,000,000,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム22 -->
+                <div class="buyItem" id="buyItem22">
+                    <img src="img/22.jpg" alt="2009年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2009年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem22Price">260,000,000,000,000,000,000,000,000ポイント</span>
+                </div>
+        
+                <!-- アイテム23 -->
+                <div class="buyItem" id="buyItem23">
+                    <img src="img/23.jpg" alt="2015年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2015年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem23Price">2,672,500,000,000,000,000,000,000,000ポイント</span>
+                </div>
+
+                <!-- アイテム24 -->
+                <div class="buyItem" id="buyItem24">
+                    <img src="img/24.jpg" alt="2016年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2016年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem24Price">30,050,000,000,000,000,000,000,000,000ポイント</span>
+                </div>
+
+                <!-- アイテム25 -->
+                <div class="buyItem" id="buyItem25">
+                    <img src="img/25.jpg" alt="2010年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2010年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem25Price">321,000,000,000,000,000,000,000,000,000ポイント</span>
+                </div>
+
+                <!-- アイテム26 -->
+                <div class="buyItem" id="buyItem26">
+                    <img src="img/26.webp" alt="2007年ドラフトの再現" class="itemImage">
+                    <span class="itemName">2007年ドラフトの再現</span>
+                    <span class="itemPrice" id="buyItem26Price">3,280,000,000,000,000,000,000,000,000 ポイント</span>
+                </div>
+
+                <!-- アイテム27 -->
+                <div class="buyItem" id="buyItem27">
+                    <img src="img/27.jpg" alt="セ・リーグ優勝" class="itemImage">
+                    <span class="itemName">セ・リーグ優勝</span>
+                    <span class="itemPrice" id="buyItem27Price">21,000,000,000,000,000,000,000,000,000ポイント</span>
+                </div>
+
+                <!-- アイテム28 -->
+                <div class="buyItem" id="buyItem28">
+                    <img src="img/28.jpg" alt="優勝のビールかけとファン感" class="itemImage">
+                    <span class="itemName">優勝のビールかけとファン感</span>
+                    <span class="itemPrice" id="buyItem28Price">150,000,000,000,000,000,000,000,000,000ポイント</span>
+                </div>
+
+                <!-- アイテム29 -->
+                <div class="buyItem" id="buyItem29">
+                    <img src="img/29.jpg" alt="ファーム優勝決定" class="itemImage">
+                    <span class="itemName">ファーム優勝決定</span>
+                    <span class="itemPrice" id="buyItem29Price">1,100,000,000,000,000,000,000,000,000,000ポイント</span>
+                </div>
+
+                <!-- アイテム30 -->
+                <div class="buyItem" id="buyItem30">
+                    <img src="img/30.jpeg" alt="CSファーストステージ突破" class="itemImage">
+                    <span class="itemName">CSファーストステージ突破</span>
+                    <span class="itemPrice" id="buyItem30Price">83,000,000,000,000,000,000,000,000,000,000ポイント</span>
+                </div>
+
+                <!-- アイテム31 -->
+                <div class="buyItem" id="buyItem31">
+                    <img src="img/31.jpg" alt="CSファイナルシリーズ突破" class="itemImage">
+                    <span class="itemName">CSファイナルシリーズ突破</span>
+                    <span class="itemPrice" id="buyItem31Price">640,000,000,000,000,000,000,000,000,000,000ポイント</span>
+                </div>
+
+                <!-- アイテム32 -->
+                <div class="buyItem" id="buyItem32">
+                    <img src="img/32.jpg" alt="日本シリーズ優勝" class="itemImage">
+                    <span class="itemName">日本シリーズ優勝</span>
+                    <span class="itemPrice" id="buyItem32Price">5,100,000,000,000,000,000,000,000,000,000,000ポイント</span>
+                </div>
+            
+            
+
+
+
+          </div>
+
+        </div>
+        <script src="js/script.js"></script>
+
+</body>
+</html>
+
+
+        

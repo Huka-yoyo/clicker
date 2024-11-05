@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    width: 90%;
+    height: 100vh;
+}
+
+/* 左側：クリック構造 */
+#clickerSection {
+    width: 30%;
+    background-color: #f5f5f5;
+    border-right: 2px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+#clicker {
+    width: 150px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#counter {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* 真ん中：オプション構造 */
+#optionSection {
+    width: 30%;
+    background-color: #f5f5f5;
+    border-right: 2px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 右側：アイテムリスト */
+#itemSection {
+    display: flex;                 /* フレックスボックスでアイテムを横並びに */
+    flex-wrap: wrap;              /* アイテムが横幅に収まらない場合に折り返す */
+    justify-content: center;       /* 中央揃え */
+    align-items: flex-start;      /* アイテムを上に揃える */
+    padding: 20px;                /* セクション内の余白 */
+    height: auto;                 /* 縦幅は自動 */
+    max-height: 800px;            /* 最大縦幅を指定（必要に応じて調整） */
+    overflow-y: auto;             /* 縦に溢れた場合にスクロール可能 */
+    background-color: #f9f9f9;    /* 背景色（必要に応じて調整） */
+    border: 1px solid #ddd;       /* 枠線（必要に応じて調整） */
+    border-radius: 8px;           /* 角丸にする（必要に応じて調整） */
+}
+
+#items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* アイテムセクション全体のスタイル */
+.buyItem {
+    background-color: #ffffff; /* アイテムの背景色 */
+    border: 2px solid #007bff; /* 青いボーダー */
+    border-radius: 10px; /* 角を丸くする */
+    margin: 15px auto; /* 上下にマージンを追加し、中央揃え */
+    padding: 15px; /* 内側のパディング */
+    width: 550px; /* アイテムの幅 */
+    margin-bottom: 10px; /* アイテム間の余白 */
+    
+    transition: transform 0.3s, box-shadow 0.3s; /* アニメーション */
+}
+
+/* アイテムにホバーしたときのエフェクト */
+.buyItem:hover {
+    transform: scale(1.05); /* 少し拡大 */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* 青い影を追加 */
+}
+
+/* アイテム名のスタイル */
+.itemName {
+    font-size: 20px; /* フォントサイズ */
+    font-weight: bold; /* 太字 */
+    color: #333; /* テキストの色 */
+    display: block; /* ブロック要素にする */
+    margin-bottom: 5px; /* 下にマージンを追加 */
+}
+
+/* アイテム価格のスタイル */
+.itemPrice {
+    font-size: 16px; /* フォントサイズ */
+    color: #007bff; /* 青色 */
+}
+
+
+.itemImage {
+    width: 75px; /* 画像の幅 */
+    height: auto; /* 高さは自動調整 */
+    margin-right: 10px; /* 画像とテキストの間にマージンを追加 */
+    vertical-align: middle; /* テキストと画像の縦の位置を揃える */
+}
+
+
+
